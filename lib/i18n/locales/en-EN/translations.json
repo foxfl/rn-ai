@@ -1,0 +1,28 @@
+{
+  "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to the camera to scan barcodes.",
+  "NSPhotoLibraryUsageDescription": "$(PRODUCT_NAME) needs access to your photos to upload product images.",
+  "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) needs access to your photos to upload product images.",
+  "buttons": {
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "drawer": {
+    "home": "Chat",
+    "settings": "Settings",
+    "model-manager": "Model Manager"
+  },
+  "model-manager": {
+    "available-disk-space": "Available Disk Space: {{space}} GB",
+    "determining-disk-space": "Determining available disk space...",
+    "downloaded-models": "{{size}} GB downloaded",
+    "model-download-success": "Model downloaded successfully",
+    "model-download-removed": "Model removed successfully"
+  },
+  "chat": {
+    "model-load-error": "Error loading model",
+    "choose-model": "Choose model"
+  },
+  "recording": {
+    "listening": "Listening..."
+  }
+}

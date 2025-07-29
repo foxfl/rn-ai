@@ -5,35 +5,79 @@
     "version": "1.0.0",
     "scheme": "my-expo-app",
     "web": {
+      "bundler": "metro",
+      "output": "static",
       "favicon": "./assets/favicon.png"
     },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "newArchEnabled": true,
     "experiments": {
+      "typedRoutes": true,
       "tsconfigPaths": true
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos."
+        }
+      ],
+      "expo-web-browser",
+      [
+        "react-native-vision-camera",
+        {
+          "enableCodeScanner": true,
+          "enableLocation": false
+        }
+      ],
+      "expo-font",
+      "expo-localization",
+      ["expo-asset"]
     ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ffuchs.my-expo-app",
-      "appleTeamId": "95G6T77DP2"
+      "appleTeamId": "95G6T77DP2",
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "locales": {
+      "de": "./lib/i18n/locales/de-DE/translations.json",
+      "en": "./lib/i18n/locales/en-EN/translations.json"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ffuchs.myexpoapp",
+      "permissions": ["android.permission.CAMERA", "android.permission.RECORD_AUDIO"]
     }
   }
 }
